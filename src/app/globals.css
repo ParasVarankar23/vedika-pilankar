@@ -1,26 +1,666 @@
 @import "tailwindcss";
 
+/* =========================================================
+   ROOT
+========================================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff9fc;
+  --foreground: #24151d;
+
+  --pink: #ec2f83;
+  --deep-pink: #d91b68;
+
+  --soft-pink: #fff1f7;
+  --light-pink: #fce4ef;
+  --muted-pink: #a88d99;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  background: var(--background);
+  color: var(--foreground);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  overscroll-behavior: none;
+}
+
+
+/* =========================================================
+   NEXT.JS ROOT
+========================================================= */
+
+#__next {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* =========================================================
+   INPUTS / BUTTONS
+========================================================= */
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgba(236, 47, 131, 0.35);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+========================================================= */
+
+::selection {
+  background: var(--pink);
+  color: white;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   Hidden because this is a fullscreen experience.
+========================================================= */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+
+/* =========================================================
+   SERIF FONT
+========================================================= */
+
+.font-serif {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+
+/* =========================================================
+   FLOATING DECORATION
+========================================================= */
+
+@keyframes float {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-18px)
+      rotate(8deg);
+  }
+}
+
+.animate-float {
+  animation:
+    float
+    4s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   SLOW FLOAT
+========================================================= */
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-28px)
+      rotate(-6deg);
+  }
+}
+
+.animate-float-slow {
+  animation:
+    floatSlow
+    6s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   DELAYED FLOAT
+========================================================= */
+
+@keyframes floatDelayed {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-22px)
+      rotate(7deg);
+  }
+}
+
+.animate-float-delayed {
+  animation:
+    floatDelayed
+    7s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   FLOATING DECORATIONS (GLOBAL)
+========================================================= */
+
+@keyframes fdPremiumFloat {
+  0% {
+    transform: translate3d(0, 10px, 0) rotate(-2deg);
+    opacity: 0.08;
+  }
+
+  25% {
+    transform: translate3d(10px, -18px, 0) rotate(5deg);
+    opacity: 0.22;
+  }
+
+  50% {
+    transform: translate3d(-5px, -35px, 0) rotate(-4deg);
+    opacity: 0.14;
+  }
+
+  75% {
+    transform: translate3d(12px, -15px, 0) rotate(4deg);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translate3d(0, 10px, 0) rotate(-2deg);
+    opacity: 0.08;
+  }
+}
+
+@keyframes fdParticleFloat {
+  0% {
+    transform: translate3d(0, 10px, 0) scale(0.7);
+    opacity: 0.05;
+  }
+
+  50% {
+    transform: translate3d(8px, -30px, 0) scale(1.2);
+    opacity: 0.28;
+  }
+
+  100% {
+    transform: translate3d(-5px, 5px, 0) scale(0.7);
+    opacity: 0.05;
+  }
+}
+
+@keyframes fdLightFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: translate3d(20px, -30px, 0) scale(1.15);
+    opacity: 0.6;
+  }
+}
+
+.floating-decoration {
+  animation-name: fdPremiumFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.floating-particle {
+  animation-name: fdParticleFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.floating-light {
+  animation: fdLightFloat 8s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  .floating-decoration:nth-of-type(n + 9) {
+    display: none;
+  }
+
+  .floating-particle:nth-of-type(n + 5) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-decoration,
+  .floating-particle,
+  .floating-light {
+    animation: none !important;
+  }
+}
+
+
+/* =========================================================
+   PULSE GLOW
+========================================================= */
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.15);
+  }
+}
+
+.animate-pulse-glow {
+  animation:
+    pulseGlow
+    3s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   SOFT PULSE
+========================================================= */
+
+@keyframes softPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.animate-soft-pulse {
+  animation:
+    softPulse
+    2.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   PASSWORD ERROR SHAKE
+========================================================= */
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-7px);
+  }
+
+  40% {
+    transform: translateX(7px);
+  }
+
+  60% {
+    transform: translateX(-5px);
+  }
+
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-shake {
+  animation:
+    shake
+    0.45s
+    ease-in-out;
+}
+
+
+/* =========================================================
+   FADE IN
+========================================================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation:
+    fadeIn
+    0.35s
+    ease-out;
+}
+
+
+/* =========================================================
+   PREMIUM SECTION TRANSITION
+========================================================= */
+
+.section-enter {
+  width: 100%;
+  height: 100%;
+
+  animation:
+    sectionEnter
+    0.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+@keyframes sectionEnter {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateX(70px)
+      scale(1.025);
+
+    filter: blur(7px);
+  }
+
+  45% {
+    opacity: 0.65;
+
+    filter: blur(2px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1);
+
+    filter: blur(0);
+  }
+}
+
+
+/* =========================================================
+   NEXT SECTION
+========================================================= */
+
+.section-enter-next {
+  width: 100%;
+  height: 100%;
+
+  animation:
+    sectionNext
+    0.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+@keyframes sectionNext {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateX(70px)
+      scale(0.975);
+
+    filter: blur(6px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1);
+
+    filter: blur(0);
+  }
+}
+
+
+/* =========================================================
+   PREVIOUS SECTION
+   Kept for compatibility, even though your website
+   currently has no back button.
+========================================================= */
+
+.section-enter-previous {
+  width: 100%;
+  height: 100%;
+
+  animation:
+    sectionPrevious
+    0.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+@keyframes sectionPrevious {
+ 0% {
+    opacity: 0;
+
+    transform:
+      translateX(-70px)
+      scale(0.975);
+
+    filter: blur(6px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1);
+
+    filter: blur(0);
+  }
+}
+
+
+/* =========================================================
+   UNLOCK TRANSITION
+========================================================= */
+
+@keyframes unlockZoom {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.08);
+    filter: blur(4px);
+  }
+}
+
+.unlock-animation {
+  animation:
+    unlockZoom
+    0.9s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+
+/* =========================================================
+   HEART BEAT
+========================================================= */
+
+@keyframes heartBeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.08);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.08);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+.animate-heart {
+  animation:
+    heartBeat
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   SHIMMER
+========================================================= */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+
+  animation:
+    shimmer
+    3s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 640px) {
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    min-height: 100svh;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .section-enter,
+  .section-enter-next,
+  .section-enter-previous {
+    animation-duration: 0.65s;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   Accessibility
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
 }
