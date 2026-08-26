@@ -1,10 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const memories = [
   {
@@ -47,59 +44,92 @@ const memories = [
 
 export default function MemoryGallery() {
   const sectionRef = useRef(null);
+  const imageRef = useRef(null);
+  const contentRef = useRef(null);
+
+  const [active, setActive] = useState(0);
+
+  const memory = memories[active];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".memory-heading", {
+      gsap.from(".gallery-heading", {
         opacity: 0,
-        y: 35,
-        duration: 1,
+        y: 30,
+        duration: 0.9,
         ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-          once: true,
-        },
       });
 
-      gsap.from(".memory-card", {
+      gsap.from(".gallery-main", {
         opacity: 0,
-        y: 70,
         scale: 0.96,
-        duration: 1,
-        stagger: 0.16,
+        duration: 1.1,
+        delay: 0.15,
         ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".memory-grid",
-          start: "top 78%",
-          once: true,
-        },
-      });
-
-      gsap.to(".gallery-glow", {
-        scale: 1.15,
-        opacity: 0.65,
-        duration: 4,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
       });
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        imageRef.current,
+        {
+          opacity: 0,
+          scale: 1.08,
+          x: 25,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power3.out",
+        }
+      );
+
+      gsap.fromTo(
+        contentRef.current,
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          delay: 0.15,
+          ease: "power3.out",
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, [active]);
+
+  const changeMemory = (index) => {
+    if (index === active) return;
+    setActive(index);
+  };
+
   return (
     <section
       ref={sectionRef}
       className="
         relative
+        flex
+        h-[100svh]
+        w-full
+        items-center
+        justify-center
         overflow-hidden
         bg-[#fff9fc]
-        px-5
-        py-24
+        px-4
+        py-6
         sm:px-8
-        sm:py-32
+        sm:py-8
       "
     >
       {/* =====================================================
@@ -107,313 +137,237 @@ export default function MemoryGallery() {
       ===================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div
-          className="
-            gallery-glow
-            absolute
-            left-1/2
-            top-[30%]
-            h-[420px]
-            w-[420px]
-            -translate-x-1/2
-            rounded-full
-            bg-pink-200/20
-            blur-[120px]
-          "
-        />
+        <div className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-200/25 blur-[120px] sm:h-[600px] sm:w-[600px]" />
 
-        <div className="absolute -left-32 top-[45%] h-72 w-72 rounded-full bg-rose-100/30 blur-[100px]" />
+        <div className="absolute -left-32 top-1/3 h-72 w-72 rounded-full bg-rose-100/30 blur-[100px]" />
 
-        <div className="absolute -right-32 top-[15%] h-72 w-72 rounded-full bg-pink-100/30 blur-[100px]" />
+        <div className="absolute -right-32 bottom-1/4 h-72 w-72 rounded-full bg-pink-100/30 blur-[100px]" />
 
-        <span className="absolute left-[8%] top-[18%] text-2xl text-[#ec2f83]/10">
+        <span className="absolute left-[8%] top-[18%] text-2xl text-[#ec2f83]/15">
           ✦
         </span>
 
-        <span className="absolute right-[9%] top-[38%] text-3xl text-[#ec2f83]/10">
+        <span className="absolute right-[8%] top-[30%] text-3xl text-[#ec2f83]/10">
           ♡
         </span>
 
-        <span className="absolute bottom-[15%] left-[14%] text-xl text-[#ec2f83]/10">
+        <span className="absolute bottom-[18%] left-[12%] text-xl text-[#ec2f83]/10">
           ✧
         </span>
       </div>
 
       {/* =====================================================
-          HEADER
+          MAIN CONTENT
       ===================================================== */}
 
-      <div className="memory-heading relative z-10 mx-auto mb-14 max-w-3xl text-center sm:mb-20">
-        <div className="mb-5 flex items-center justify-center gap-3">
-          <span className="h-px w-10 bg-[#ec2f83]/25 sm:w-16" />
+      <div className="relative z-10 flex h-full w-full max-w-6xl flex-col justify-center">
+        {/* HEADER */}
 
-          <span className="text-xs text-[#ec2f83]">
-            ✦
-          </span>
+        <div className="gallery-heading mb-4 text-center sm:mb-5">
+          <div className="mb-2 flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-[#ec2f83]/30 sm:w-12" />
 
-          <p className="text-[9px] font-semibold uppercase tracking-[0.45em] text-[#ec2f83] sm:text-[10px]">
-            Memories
-          </p>
+            <span className="text-[10px] text-[#ec2f83]">
+              ✦
+            </span>
 
-          <span className="text-xs text-[#ec2f83]">
-            ✦
-          </span>
+            <p className="text-[8px] font-semibold uppercase tracking-[0.4em] text-[#ec2f83] sm:text-[10px]">
+              Memories
+            </p>
 
-          <span className="h-px w-10 bg-[#ec2f83]/25 sm:w-16" />
+            <span className="text-[10px] text-[#ec2f83]">
+              ✦
+            </span>
+
+            <span className="h-px w-8 bg-[#ec2f83]/30 sm:w-12" />
+          </div>
+
+          <h2 className="font-serif text-3xl font-semibold tracking-tight text-[#24151d] sm:text-5xl">
+            Little Moments,
+            <span className="text-[#ec2f83]"> Forever Memories</span>
+          </h2>
         </div>
 
-        <h2
+        {/* =====================================================
+            GALLERY
+        ===================================================== */}
+
+        <div
           className="
-            font-serif
-            text-5xl
-            font-semibold
-            leading-tight
-            tracking-tight
-            text-[#24151d]
-            sm:text-7xl
+            gallery-main
+            mx-auto
+            flex
+            w-full
+            max-w-5xl
+            flex-1
+            min-h-0
+            items-center
+            justify-center
           "
         >
-          Little Moments,
-          <br />
-          <span className="text-[#ec2f83]">
-            Forever Memories
-          </span>
-        </h2>
-
-        <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-[#765f69] sm:text-base sm:leading-8">
-          A few beautiful chapters from a journey that began
-          with a simple moment and became a lifetime of memories.
-        </p>
-      </div>
-
-      {/* =====================================================
-          MEMORY GRID
-      ===================================================== */}
-
-      <div
-        className="
-          memory-grid
-          relative
-          z-10
-          mx-auto
-          grid
-          max-w-6xl
-          gap-6
-          sm:grid-cols-2
-          lg:gap-8
-        "
-      >
-        {memories.map((memory, index) => (
-          <article
-            key={memory.number}
-            className={`
-              memory-card
-              group
-              relative
+          <div
+            className="
+              grid
+              h-[62vh]
+              max-h-[620px]
+              min-h-[380px]
+              w-full
+              grid-cols-1
               overflow-hidden
-              rounded-[2rem]
+              rounded-[1.75rem]
               border
               border-pink-100
               bg-white
-              shadow-[0_20px_70px_rgba(236,47,131,0.08)]
-              transition-all
-              duration-500
-              hover:-translate-y-2
-              hover:shadow-[0_30px_90px_rgba(236,47,131,0.15)]
-              ${index % 2 === 1 ? "lg:mt-14" : ""}
-            `}
+              shadow-[0_30px_100px_rgba(236,47,131,0.12)]
+              sm:grid-cols-[1.35fr_0.65fr]
+              sm:rounded-[2rem]
+            "
           >
-            {/* IMAGE */}
+            {/* =================================================
+                LARGE IMAGE
+            ================================================= */}
 
-            <div className="relative aspect-[4/5] overflow-hidden bg-pink-100 sm:aspect-[5/6]">
+            <div className="relative min-h-0 overflow-hidden">
               <img
+                ref={imageRef}
                 src={memory.image}
                 alt={memory.title}
-                loading="lazy"
-                className="
-                  h-full
-                  w-full
-                  object-cover
-                  transition-transform
-                  duration-[1200ms]
-                  ease-out
-                  group-hover:scale-110
-                "
-              />
-
-              {/* Image gradient */}
-
-              <div
                 className="
                   absolute
                   inset-0
-                  bg-gradient-to-t
-                  from-black/55
-                  via-black/5
-                  to-transparent
-                  opacity-70
-                  transition-opacity
-                  duration-500
-                  group-hover:opacity-90
+                  h-full
+                  w-full
+                  object-cover
+                  object-center
                 "
               />
 
-              {/* Soft pink tint */}
+              {/* Image overlay */}
 
-              <div className="absolute inset-0 bg-pink-500/0 transition duration-700 group-hover:bg-pink-500/5" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
               {/* Number */}
 
-              <div
-                className="
-                  absolute
-                  left-5
-                  top-5
-                  flex
-                  h-11
-                  min-w-11
-                  items-center
-                  justify-center
-                  rounded-full
-                  border
-                  border-white/50
-                  bg-white/85
-                  px-3
-                  text-xs
-                  font-semibold
-                  tracking-wider
-                  text-[#ec2f83]
-                  shadow-lg
-                  backdrop-blur-xl
-                  transition-all
-                  duration-500
-                  group-hover:scale-110
-                  group-hover:bg-white
-                "
-              >
+              <div className="absolute left-4 top-4 flex h-10 min-w-10 items-center justify-center rounded-full border border-white/40 bg-white/85 px-3 text-xs font-semibold text-[#ec2f83] shadow-lg backdrop-blur-xl sm:left-6 sm:top-6">
                 {memory.number}
               </div>
 
               {/* Year */}
 
-              <div
-                className="
-                  absolute
-                  right-5
-                  top-5
-                  rounded-full
-                  border
-                  border-white/30
-                  bg-black/10
-                  px-4
-                  py-2
-                  text-[9px]
-                  font-medium
-                  uppercase
-                  tracking-[0.2em]
-                  text-white
-                  backdrop-blur-md
-                "
-              >
+              <div className="absolute right-4 top-4 rounded-full border border-white/30 bg-black/20 px-3 py-2 text-[8px] uppercase tracking-[0.2em] text-white backdrop-blur-md sm:right-6 sm:top-6 sm:text-[9px]">
                 {memory.year}
               </div>
 
-              {/* Bottom image information */}
+              {/* Image title */}
 
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-7">
-                <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.3em] text-pink-100">
+              <div className="absolute bottom-5 left-5 right-5 sm:bottom-7 sm:left-7 sm:right-7">
+                <p className="text-[8px] font-semibold uppercase tracking-[0.3em] text-pink-100 sm:text-[9px]">
                   {memory.subtitle}
                 </p>
 
-                <h3 className="font-serif text-3xl font-semibold text-white sm:text-4xl">
+                <h3 className="mt-1 font-serif text-3xl font-semibold text-white sm:text-5xl">
                   {memory.title}
                 </h3>
 
-                <div className="mt-4 h-px w-10 bg-white/60 transition-all duration-500 group-hover:w-20" />
-              </div>
-
-              {/* Hover heart */}
-
-              <div
-                className="
-                  absolute
-                  bottom-6
-                  right-6
-                  flex
-                  h-10
-                  w-10
-                  scale-90
-                  items-center
-                  justify-center
-                  rounded-full
-                  border
-                  border-white/30
-                  bg-white/10
-                  text-lg
-                  opacity-0
-                  backdrop-blur-md
-                  transition-all
-                  duration-500
-                  group-hover:scale-100
-                  group-hover:opacity-100
-                "
-              >
-                ♡
+                <div className="mt-3 h-px w-10 bg-white/70" />
               </div>
             </div>
 
-            {/* CARD FOOTER */}
+            {/* =================================================
+                INFORMATION PANEL
+            ================================================= */}
 
-            <div className="flex items-center justify-between gap-4 px-6 py-5 sm:px-7">
-              <p className="max-w-sm text-xs leading-5 text-[#765f69]">
-                {memory.description}
-              </p>
+            <div className="flex min-h-0 flex-col justify-between bg-white p-5 sm:p-7 md:p-9">
+              <div ref={contentRef}>
+                <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#ec2f83]">
+                  Memory {memory.number}
+                </p>
 
-              <div
-                className="
-                  flex
-                  h-9
-                  w-9
-                  shrink-0
-                  items-center
-                  justify-center
-                  rounded-full
-                  border
-                  border-pink-100
-                  text-sm
-                  text-[#ec2f83]
-                  transition-all
-                  duration-300
-                  group-hover:border-[#ec2f83]
-                  group-hover:bg-[#ec2f83]
-                  group-hover:text-white
-                "
-              >
-                ↗
+                <p className="mt-2 font-serif text-2xl text-[#d91b68] sm:text-3xl">
+                  {memory.year}
+                </p>
+
+                <div className="my-4 h-px w-12 bg-[#ec2f83]/40" />
+
+                <p className="text-xs leading-6 text-[#765f69] sm:text-sm sm:leading-7">
+                  {memory.description}
+                </p>
+              </div>
+
+              {/* =================================================
+                  MEMORY SELECTOR
+              ================================================= */}
+
+              <div className="mt-4">
+                <p className="mb-2 text-[8px] font-medium uppercase tracking-[0.25em] text-[#a88d99]">
+                  Journey
+                </p>
+
+                <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
+                  {memories.map((item, index) => (
+                    <button
+                      key={item.number}
+                      onClick={() => changeMemory(index)}
+                      aria-label={`View ${item.title}`}
+                      className={`
+                        relative
+                        h-10
+                        overflow-hidden
+                        rounded-lg
+                        border
+                        transition-all
+                        duration-300
+                        sm:h-12
+                        sm:rounded-xl
+                        ${
+                          active === index
+                            ? "border-[#ec2f83] ring-2 ring-pink-100"
+                            : "border-pink-100 opacity-60 hover:opacity-100"
+                        }
+                      `}
+                    >
+                      <img
+                        src={item.image}
+                        alt=""
+                        className="h-full w-full object-cover"
+                      />
+
+                      {active === index && (
+                        <div className="absolute inset-0 bg-[#ec2f83]/20" />
+                      )}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Progress */}
+
+                <div className="mt-4 flex items-center gap-2">
+                  <div className="h-1 flex-1 overflow-hidden rounded-full bg-pink-100">
+                    <div
+                      className="h-full rounded-full bg-[#ec2f83] transition-all duration-500"
+                      style={{
+                        width: `${((active + 1) / memories.length) * 100}%`,
+                      }}
+                    />
+                  </div>
+
+                  <span className="text-[9px] font-medium text-[#765f69]">
+                    {String(active + 1).padStart(2, "0")} /{" "}
+                    {String(memories.length).padStart(2, "0")}
+                  </span>
+                </div>
               </div>
             </div>
-          </article>
-        ))}
-      </div>
-
-      {/* =====================================================
-          FOOTER
-      ===================================================== */}
-
-      <div className="relative z-10 mt-16 text-center sm:mt-20">
-        <div className="mx-auto flex items-center justify-center gap-3">
-          <span className="h-px w-12 bg-[#ec2f83]/20" />
-
-          <span className="text-sm text-[#ec2f83]">
-            ♡
-          </span>
-
-          <span className="h-px w-12 bg-[#ec2f83]/20" />
+          </div>
         </div>
 
-        <p className="mt-5 font-serif text-lg italic text-[#d91b68]">
-          Some memories are meant to last forever.
-        </p>
+        {/* FOOTER */}
+
+        <div className="mt-3 text-center sm:mt-4">
+          <p className="font-serif text-sm italic text-[#d91b68] sm:text-base">
+            Some memories are meant to last forever. ♡
+          </p>
+        </div>
       </div>
     </section>
   );

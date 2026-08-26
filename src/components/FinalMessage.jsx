@@ -4,515 +4,439 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 export default function FinalMessage() {
-    const section = useRef(null);
+  const section = useRef(null);
 
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            const tl = gsap.timeline({
-                defaults: {
-                    ease: "power3.out",
-                },
-            });
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        defaults: {
+          ease: "power3.out",
+        },
+      });
 
-            tl.from(".final-glow", {
-                opacity: 0,
-                scale: 0.7,
-                duration: 1.4,
-            })
-                .from(
-                    ".final-heart",
-                    {
-                        opacity: 0,
-                        scale: 0,
-                        y: 20,
-                        duration: 1,
-                        ease: "back.out(1.8)",
-                    },
-                    "-=0.7"
-                )
-                .from(
-                    ".final-label",
-                    {
-                        opacity: 0,
-                        y: 18,
-                        duration: 0.7,
-                    },
-                    "-=0.45"
-                )
-                .from(
-                    ".final-title",
-                    {
-                        opacity: 0,
-                        y: 35,
-                        duration: 1,
-                    },
-                    "-=0.35"
-                )
-                .from(
-                    ".final-description",
-                    {
-                        opacity: 0,
-                        y: 20,
-                        duration: 0.8,
-                    },
-                    "-=0.4"
-                )
-                .from(
-                    ".final-divider",
-                    {
-                        opacity: 0,
-                        scaleX: 0,
-                        duration: 0.7,
-                    },
-                    "-=0.35"
-                )
-                .from(
-                    ".final-story",
-                    {
-                        opacity: 0,
-                        y: 18,
-                        duration: 0.8,
-                    },
-                    "-=0.35"
-                )
-                .from(
-                    ".final-birthday",
-                    {
-                        opacity: 0,
-                        y: 25,
-                        scale: 0.96,
-                        duration: 0.9,
-                    },
-                    "-=0.4"
-                )
-                .from(
-                    ".final-signature",
-                    {
-                        opacity: 0,
-                        y: 20,
-                        duration: 0.8,
-                    },
-                    "-=0.35"
-                );
+      tl.from(".final-glow", {
+        opacity: 0,
+        scale: 0.75,
+        duration: 1.2,
+      })
+        .from(
+          ".final-heart",
+          {
+            opacity: 0,
+            scale: 0,
+            y: 20,
+            duration: 0.9,
+            ease: "back.out(1.8)",
+          },
+          "-=0.6"
+        )
+        .from(
+          ".final-label",
+          {
+            opacity: 0,
+            y: 15,
+            duration: 0.6,
+          },
+          "-=0.4"
+        )
+        .from(
+          ".final-title",
+          {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+          },
+          "-=0.3"
+        )
+        .from(
+          ".final-description",
+          {
+            opacity: 0,
+            y: 15,
+            duration: 0.7,
+          },
+          "-=0.35"
+        )
+        .from(
+          ".final-divider",
+          {
+            opacity: 0,
+            scaleX: 0,
+            duration: 0.6,
+          },
+          "-=0.3"
+        )
+        .from(
+          ".final-story",
+          {
+            opacity: 0,
+            y: 15,
+            duration: 0.6,
+          },
+          "-=0.3"
+        )
+        .from(
+          ".final-birthday",
+          {
+            opacity: 0,
+            y: 20,
+            scale: 0.97,
+            duration: 0.8,
+          },
+          "-=0.3"
+        )
+        .from(
+          ".final-signature",
+          {
+            opacity: 0,
+            y: 15,
+            duration: 0.7,
+          },
+          "-=0.3"
+        );
 
-            /* =====================================================
-               MAIN GLOW
-            ===================================================== */
+      // Main glow
+      gsap.to(".final-glow", {
+        scale: 1.12,
+        opacity: 0.65,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
 
-            gsap.to(".final-glow", {
-                scale: 1.18,
-                opacity: 0.7,
-                duration: 4,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-            });
+      // Heart breathing animation
+      gsap.to(".final-heart", {
+        scale: 1.08,
+        duration: 1.8,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: 1.2,
+      });
 
-            /* =====================================================
-               HEART
-            ===================================================== */
+      // Orbit
+      gsap.to(".final-orbit", {
+        rotation: 360,
+        duration: 28,
+        repeat: -1,
+        ease: "none",
+      });
 
-            gsap.to(".final-heart", {
-                scale: 1.1,
-                duration: 1.8,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-                delay: 1.5,
-            });
+      // Floating decorations
+      gsap.to(".final-heart-one", {
+        y: -18,
+        x: 7,
+        rotation: 8,
+        duration: 3.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
 
-            /* =====================================================
-               ORBIT
-            ===================================================== */
+      gsap.to(".final-heart-two", {
+        y: -14,
+        x: -7,
+        rotation: -8,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
 
-            gsap.to(".final-orbit", {
-                rotation: 360,
-                duration: 28,
-                repeat: -1,
-                ease: "none",
-            });
+      gsap.to(".final-heart-three", {
+        y: -16,
+        duration: 3.2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
 
-            /* =====================================================
-               FLOATING HEARTS
-            ===================================================== */
+      gsap.to(".final-sparkle", {
+        rotation: 180,
+        scale: 1.15,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+    }, section);
 
-            gsap.to(".final-heart-one", {
-                y: -20,
-                x: 8,
-                rotation: 8,
-                duration: 3.5,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-            });
+    return () => ctx.revert();
+  }, []);
 
-            gsap.to(".final-heart-two", {
-                y: -15,
-                x: -8,
-                rotation: -8,
-                duration: 4,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-            });
-
-            gsap.to(".final-heart-three", {
-                y: -18,
-                duration: 3.2,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-            });
-
-            /* =====================================================
-               SPARKLES
-            ===================================================== */
-
-            gsap.to(".final-sparkle", {
-                rotation: 180,
-                scale: 1.2,
-                duration: 3,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-            });
-        }, section);
-
-        return () => ctx.revert();
-    }, []);
-
-    return (
-        <section
-            ref={section}
-            className="
+  return (
+    <section
+      ref={section}
+      className="
         relative
         flex
-        h-[100svh]
-        min-h-[560px]
+        min-h-[100svh]
         w-full
         items-center
         justify-center
         overflow-hidden
-        bg-white
+        bg-[#fff9fc]
         px-5
+        py-10
         sm:px-8
+        sm:py-12
       "
-        >
-            {/* =====================================================
-          BACKGROUND
-      ===================================================== */}
-
-            <div className="pointer-events-none absolute inset-0 overflow-hidden">
-
-                {/* Main glow */}
-
-                <div
-                    className="
+    >
+      {/* BACKGROUND */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Main glow */}
+        <div
+          className="
             final-glow
             absolute
             left-1/2
             top-1/2
-            h-[300px]
-            w-[300px]
+            h-[260px]
+            w-[260px]
             -translate-x-1/2
             -translate-y-1/2
             rounded-full
             bg-pink-200/30
-            blur-[100px]
-            sm:h-[540px]
-            sm:w-[540px]
+            blur-[90px]
+            sm:h-[520px]
+            sm:w-[520px]
             sm:blur-[140px]
           "
-                />
+        />
 
-                {/* Top left glow */}
+        {/* Corner glows */}
+        <div className="absolute -left-32 -top-32 h-72 w-72 rounded-full bg-pink-100/50 blur-[100px]" />
 
-                <div className="absolute -left-36 -top-36 h-80 w-80 rounded-full bg-pink-100/50 blur-[110px]" />
+        <div className="absolute -bottom-32 -right-32 h-72 w-72 rounded-full bg-rose-100/50 blur-[100px]" />
 
-                {/* Bottom right glow */}
-
-                <div className="absolute -bottom-36 -right-36 h-80 w-80 rounded-full bg-rose-100/50 blur-[110px]" />
-
-                {/* =================================================
-            GIANT BACKGROUND HEART
-        ================================================= */}
-
-                <div
-                    className="
+        {/* Giant heart */}
+        <div
+          className="
             absolute
             left-1/2
             top-1/2
             -translate-x-1/2
             -translate-y-1/2
             font-serif
-            text-[240px]
+            text-[220px]
             leading-none
             text-[#ec2f83]
             opacity-[0.025]
             sm:text-[480px]
           "
-                >
-                    ♥
-                </div>
+        >
+          ♥
+        </div>
 
-                {/* =================================================
-            ORBIT
-        ================================================= */}
-
-                <div
-                    className="
+        {/* Orbit */}
+        <div
+          className="
             final-orbit
             absolute
             left-1/2
             top-1/2
-            h-[290px]
-            w-[290px]
+            h-[280px]
+            w-[280px]
             -translate-x-1/2
             -translate-y-1/2
             rounded-full
             border
             border-[#ec2f83]/10
-            sm:h-[510px]
-            sm:w-[510px]
+            sm:h-[500px]
+            sm:w-[500px]
           "
-                >
-                    <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-[#ec2f83]/50 shadow-[0_0_18px_rgba(236,47,131,0.45)]" />
+        >
+          <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-[#ec2f83]/45 shadow-[0_0_18px_rgba(236,47,131,0.4)]" />
 
-                    <span className="absolute bottom-[10%] left-[10%] h-1.5 w-1.5 rounded-full bg-[#ec2f83]/30" />
+          <span className="absolute bottom-[10%] left-[10%] h-1.5 w-1.5 rounded-full bg-[#ec2f83]/30" />
 
-                    <span className="absolute right-[8%] top-[20%] h-2 w-2 rounded-full bg-pink-300/40" />
-                </div>
+          <span className="absolute right-[8%] top-[20%] h-2 w-2 rounded-full bg-pink-300/40" />
+        </div>
 
-                {/* =================================================
-            FLOATING DECORATIONS
-        ================================================= */}
+        {/* Floating hearts */}
+        <span className="final-heart-one absolute left-[8%] top-[22%] text-2xl text-[#ec2f83]/20 sm:left-[17%] sm:text-3xl">
+          ♡
+        </span>
 
-                <span className="final-heart-one absolute left-[8%] top-[24%] text-2xl text-[#ec2f83]/20 sm:left-[17%] sm:text-3xl">
-                    ♡
-                </span>
+        <span className="final-heart-two absolute right-[8%] top-[27%] text-3xl text-[#ec2f83]/20 sm:right-[17%]">
+          ♡
+        </span>
 
-                <span className="final-heart-two absolute right-[8%] top-[29%] text-3xl text-[#ec2f83]/20 sm:right-[17%]">
-                    ♡
-                </span>
+        <span className="final-heart-three absolute bottom-[20%] left-[18%] text-lg text-[#ec2f83]/20 sm:left-[25%]">
+          ✦
+        </span>
 
-                <span className="final-heart-three absolute bottom-[22%] left-[18%] text-lg text-[#ec2f83]/20 sm:left-[25%]">
-                    ✦
-                </span>
+        <span className="absolute bottom-[22%] right-[18%] text-xl text-[#ec2f83]/20">
+          ✧
+        </span>
 
-                <span className="absolute bottom-[24%] right-[18%] text-xl text-[#ec2f83]/20">
-                    ✧
-                </span>
+        <span className="absolute left-[10%] top-[16%] h-1.5 w-1.5 rounded-full bg-[#ec2f83]/25" />
 
-                <span className="absolute left-[10%] top-[16%] h-1.5 w-1.5 rounded-full bg-[#ec2f83]/25" />
+        <span className="absolute right-[10%] top-[18%] h-2 w-2 rounded-full bg-[#ec2f83]/25" />
+      </div>
 
-                <span className="absolute right-[10%] top-[18%] h-2 w-2 rounded-full bg-[#ec2f83]/25" />
-
-            </div>
-
-            {/* =====================================================
-          CONTENT
-      ===================================================== */}
-
-            <div className="relative z-10 w-full max-w-4xl text-center">
-
-                {/* =================================================
-            HEART
-        ================================================= */}
-
-                <div
-                    className="
+      {/* CONTENT */}
+      <div className="relative z-10 w-full max-w-4xl text-center">
+        {/* Heart */}
+        <div
+          className="
             final-heart
             mx-auto
             flex
-            h-16
-            w-16
+            h-14
+            w-14
             items-center
             justify-center
             rounded-full
             border
             border-pink-100
-            bg-white/80
-            text-3xl
-            text-[#ec2f83]
+            bg-white/85
+            text-2xl
             shadow-[0_18px_55px_rgba(236,47,131,0.15)]
             backdrop-blur-xl
             sm:h-20
             sm:w-20
             sm:text-4xl
           "
-                >
-                    ❤️
-                </div>
+        >
+          ❤️
+        </div>
 
-                {/* =================================================
-            LABEL
-        ================================================= */}
+        {/* Label */}
+        <div className="final-label mt-5 flex items-center justify-center gap-3 sm:mt-7">
+          <span className="h-px w-7 bg-[#ec2f83]/25 sm:w-14" />
 
-                <div className="final-label mt-7 flex items-center justify-center gap-3 sm:mt-8">
+          <p className="text-[8px] font-semibold uppercase tracking-[0.35em] text-[#ec2f83] sm:text-[10px] sm:tracking-[0.45em]">
+            The Story Continues
+          </p>
 
-                    <span className="h-px w-8 bg-[#ec2f83]/25 sm:w-14" />
+          <span className="h-px w-7 bg-[#ec2f83]/25 sm:w-14" />
+        </div>
 
-                    <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#ec2f83] sm:text-[10px] sm:tracking-[0.45em]">
-                        The Story Continues
-                    </p>
-
-                    <span className="h-px w-8 bg-[#ec2f83]/25 sm:w-14" />
-
-                </div>
-
-                {/* =================================================
-            MAIN TITLE
-        ================================================= */}
-
-                <h2
-                    className="
+        {/* Title */}
+        <h2
+          className="
             final-title
             mx-auto
-            mt-5
+            mt-4
             max-w-3xl
             font-serif
-            text-[34px]
+            text-[30px]
             font-semibold
-            leading-[1.12]
+            leading-[1.1]
             tracking-tight
             text-[#24151d]
             sm:mt-6
             sm:text-6xl
             md:text-7xl
           "
-                >
-                    Some stories begin
-                    <br />
-                    with a <span className="text-[#ec2f83]">moment.</span>
-                </h2>
+        >
+          Some stories begin
+          <br />
+          with a <span className="text-[#ec2f83]">moment.</span>
+        </h2>
 
-                {/* =================================================
-            DESCRIPTION
-        ================================================= */}
-
-                <p
-                    className="
+        {/* Description */}
+        <p
+          className="
             final-description
             mx-auto
-            mt-5
-            max-w-[310px]
-            text-[11px]
-            leading-6
+            mt-4
+            max-w-[300px]
+            text-[10px]
+            leading-5
             text-[#765f69]
             sm:mt-6
             sm:max-w-xl
             sm:text-base
             sm:leading-7
           "
-                >
-                    Some begin with a song.
-                    <br />
-                    And some become a lifetime.
-                </p>
+        >
+          Some begin with a song.
+          <br />
+          And some become a lifetime.
+        </p>
 
-                {/* =================================================
-            DIVIDER
-        ================================================= */}
+        {/* Divider */}
+        <div className="final-divider mx-auto my-5 flex items-center justify-center gap-3 sm:my-7">
+          <span className="h-px w-8 bg-[#ec2f83]/25 sm:w-16" />
 
-                <div className="final-divider mx-auto my-6 flex items-center justify-center gap-3 sm:my-7">
+          <span className="final-sparkle text-xs text-[#ec2f83]">
+            ✦
+          </span>
 
-                    <span className="h-px w-10 bg-[#ec2f83]/25 sm:w-16" />
+          <span className="h-px w-8 bg-[#ec2f83]/25 sm:w-16" />
+        </div>
 
-                    <span className="final-sparkle text-xs text-[#ec2f83]">
-                        ✦
-                    </span>
+        {/* Story */}
+        <div className="final-story">
+          <p className="text-[7px] font-medium uppercase tracking-[0.3em] text-[#a88d99] sm:text-[9px]">
+            Their story began in
+          </p>
 
-                    <span className="h-px w-10 bg-[#ec2f83]/25 sm:w-16" />
+          <div className="mt-1 flex items-center justify-center gap-3">
+            <span className="font-serif text-lg font-semibold text-[#765f69] sm:text-2xl">
+              2004
+            </span>
 
-                </div>
+            <span className="text-[#ec2f83]">→</span>
 
-                {/* =================================================
-            STORY
-        ================================================= */}
+            <span className="font-serif text-lg font-semibold text-[#ec2f83] sm:text-2xl">
+              2026
+            </span>
+          </div>
+        </div>
 
-                <div className="final-story">
+        {/* Birthday */}
+        <div className="final-birthday mt-4 sm:mt-6">
+          <p className="text-[7px] font-semibold uppercase tracking-[0.28em] text-[#a88d99] sm:text-[9px]">
+            A beautiful journey
+          </p>
 
-                    <p className="text-[8px] font-medium uppercase tracking-[0.3em] text-[#a88d99] sm:text-[9px]">
-                        Their story began in
-                    </p>
-
-                    <div className="mt-2 flex items-center justify-center gap-3">
-
-                        <span className="font-serif text-xl font-semibold text-[#765f69] sm:text-2xl">
-                            2004
-                        </span>
-
-                        <span className="text-[#ec2f83]">
-                            →
-                        </span>
-
-                        <span className="font-serif text-xl font-semibold text-[#ec2f83] sm:text-2xl">
-                            2026
-                        </span>
-
-                    </div>
-
-                </div>
-
-                {/* =================================================
-            BIRTHDAY MESSAGE
-        ================================================= */}
-
-                <div className="final-birthday mt-5 sm:mt-6">
-
-                    <p className="text-[8px] font-semibold uppercase tracking-[0.28em] text-[#a88d99] sm:text-[9px]">
-                        A beautiful journey
-                    </p>
-
-                    <h3
-                        className="
-              mt-2
+          <h3
+            className="
+              mt-1.5
               font-serif
-              text-[27px]
+              text-[25px]
               font-semibold
               leading-tight
               text-[#ec2f83]
+              sm:mt-2
               sm:text-5xl
               md:text-6xl
             "
-                    >
-                        Happy 40th Birthday,
-                        <br className="sm:hidden" /> Minal
-                    </h3>
+          >
+            Happy 40th Birthday,
+            <br className="sm:hidden" /> Minal
+          </h3>
 
-                    <div className="mt-2 text-sm text-[#ec2f83]">
-                        ✨
-                    </div>
+          <div className="mt-1 text-sm text-[#ec2f83]">
+            ✨
+          </div>
 
-                    <p className="mt-2 text-[9px] text-[#765f69] sm:text-sm">
-                        Chapter 40 begins now.
-                    </p>
+          <p className="mt-1 text-[8px] text-[#765f69] sm:text-sm">
+            Chapter 40 begins now.
+          </p>
+        </div>
 
-                </div>
+        {/* Signature */}
+        <div className="final-signature mt-4 sm:mt-7">
+          <p className="text-[7px] uppercase tracking-[0.3em] text-[#a88d99] sm:text-[9px]">
+            With love, always
+          </p>
 
-                {/* =================================================
-            SIGNATURE
-        ================================================= */}
+          <p className="mt-1.5 font-serif text-base font-semibold text-[#24151d] sm:mt-2 sm:text-xl">
+            Vishal{" "}
+            <span className="text-[#ec2f83]">&</span>{" "}
+            Vedika
+          </p>
 
-                <div className="final-signature mt-5 sm:mt-7">
-
-                    <p className="text-[8px] uppercase tracking-[0.3em] text-[#a88d99] sm:text-[9px]">
-                        With love, always
-                    </p>
-
-                    <p className="mt-2 font-serif text-lg font-semibold text-[#24151d] sm:text-xl">
-                        Vishal{" "}
-                        <span className="text-[#ec2f83]">&</span>{" "}
-                        Vedika
-                    </p>
-
-                    <div className="mt-1 text-xs text-[#ec2f83]">
-                        ♥
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-    );
+          <div className="mt-1 text-xs text-[#ec2f83]">
+            ♥
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
