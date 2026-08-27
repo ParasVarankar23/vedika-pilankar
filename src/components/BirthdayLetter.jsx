@@ -375,7 +375,7 @@ export default function BirthdayLetter() {
               left-1/2
               top-[15px]
               z-10
-              h-[190px]
+              h-[210px]
               w-[235px]
               -translate-x-1/2
               rounded-xl
@@ -384,7 +384,7 @@ export default function BirthdayLetter() {
               py-5
               text-left
               shadow-[0_20px_50px_rgba(36,21,29,0.15)]
-              sm:h-[215px]
+              sm:h-[235px]
               sm:w-[295px]
               sm:px-7
               sm:py-6
@@ -416,7 +416,7 @@ export default function BirthdayLetter() {
                             </p>
 
                             <p className="letter-line mt-2 text-[8px] leading-4 text-[#765f69] sm:mt-3 sm:text-[10px] sm:leading-5">
-                                May Chapter 40 bring endless happiness,
+                                May Chapter 42 bring endless happiness,
                                 laughter, love and beautiful memories.
                             </p>
 
@@ -428,7 +428,7 @@ export default function BirthdayLetter() {
                                 </p>
 
                                 <p className="mt-0.5 font-serif text-[10px] font-semibold text-[#24151d] sm:mt-1 sm:text-sm">
-                                    Vishal & Vedika ❤️
+                                    Vishal ❤️
                                 </p>
                             </div>
                         </div>

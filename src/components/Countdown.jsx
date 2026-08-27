@@ -108,7 +108,7 @@ export default function Countdown() {
           </p>
 
           <p className="mt-1 text-[9px] uppercase tracking-[0.3em] text-[#a88d99] sm:text-[10px]">
-            Minal's 40th Birthday
+            Minal's 42nd Birthday
           </p>
         </div>
 

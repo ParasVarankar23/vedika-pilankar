@@ -388,7 +388,7 @@ export default function BirthdayReveal() {
             sm:leading-7
           "
         >
-          Before we celebrate Chapter 40,
+          Before we celebrate Chapter 42,
           let us travel back to the very beginning
           of a beautiful story.
         </p>

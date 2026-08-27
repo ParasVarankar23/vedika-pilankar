@@ -8,7 +8,7 @@ export default function PasswordGate({ onUnlock }) {
     const [isUnlocking, setIsUnlocking] = useState(false);
     const [isShaking, setIsShaking] = useState(false);
 
-    const SECRET_PASSWORD = "29081986";
+    const SECRET_PASSWORD = "29081984";
 
     const addNumber = (number) => {
         if (isUnlocking || password.length >= 8) return;
@@ -364,7 +364,7 @@ export default function PasswordGate({ onUnlock }) {
                 </div>
             )}
 
-            <style jsx>{`
+            <style>{`
         @keyframes shake {
           0%,
           100% {
@@ -388,7 +388,7 @@ export default function PasswordGate({ onUnlock }) {
           }
         }
 
-        :global(.animate-shake) {
+        .animate-shake {
           animation: shake 0.45s ease-in-out;
         }
       `}</style>

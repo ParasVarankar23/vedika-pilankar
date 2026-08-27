@@ -362,7 +362,7 @@ export default function HeroSection() {
                 <div className="hero-chapter mt-4 sm:mt-5">
 
                     <h2 className="hero-shimmer bg-gradient-to-r from-[#d91b68] via-[#ec2f83] to-[#d91b68] bg-[length:200%_auto] bg-clip-text text-lg font-semibold uppercase tracking-[0.18em] text-transparent sm:text-2xl sm:tracking-[0.25em]">
-                        Chapter 40
+                        Chapter 42
                     </h2>
 
                     <p className="mt-1 text-[8px] uppercase tracking-[0.3em] text-[#a88d99] sm:text-[9px]">
@@ -386,7 +386,7 @@ export default function HeroSection() {
                 <div className="hero-pills mt-6 flex flex-wrap items-center justify-center gap-2 sm:mt-8 sm:gap-3">
 
                     <div className="rounded-full border border-pink-100 bg-white/75 px-4 py-2 text-[9px] font-medium text-[#765f69] shadow-[0_8px_25px_rgba(236,47,131,0.06)] backdrop-blur-xl sm:px-5 sm:py-2.5 sm:text-xs">
-                        40 Years
+                        42 Years
                     </div>
 
                     <div className="rounded-full border border-[#ec2f83]/10 bg-[#ec2f83] px-4 py-2 text-[9px] font-medium text-white shadow-[0_10px_30px_rgba(236,47,131,0.22)] sm:px-5 sm:py-2.5 sm:text-xs">

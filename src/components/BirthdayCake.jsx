@@ -388,7 +388,7 @@ export default function BirthdayCake() {
         ===================================================== */}
 
         <p className="mt-5 text-[7px] uppercase tracking-[0.35em] text-[#b49aa5] sm:mt-6 sm:text-[8px]">
-          29 August 1986 · Chapter 40
+          29 August 1984 · Chapter 42
         </p>
 
       </div>

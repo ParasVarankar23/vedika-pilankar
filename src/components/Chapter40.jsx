@@ -231,7 +231,7 @@ export default function Chapter40() {
             sm:text-[480px]
           "
         >
-          40
+          42
         </div>
 
         {/* =================================================
@@ -341,7 +341,7 @@ export default function Chapter40() {
               md:text-[210px]
             "
           >
-            40
+            42
           </h2>
 
         </div>
@@ -353,7 +353,7 @@ export default function Chapter40() {
         <div className="chapter-title -mt-2 sm:-mt-4">
 
           <h3 className="text-2xl font-semibold tracking-tight text-[#d91b68] sm:text-4xl">
-            Chapter 40
+            Chapter 42
           </h3>
 
           <div className="mt-2 flex items-center justify-center gap-2">
@@ -389,7 +389,7 @@ export default function Chapter40() {
             sm:leading-7
           "
         >
-          Forty years of life, laughter, love, memories
+          Forty-two years of life, laughter, love, memories
           and countless moments that shaped the beautiful
           person Minal is today.
         </p>
@@ -403,7 +403,7 @@ export default function Chapter40() {
           <div className="flex items-center gap-2 rounded-full border border-pink-100 bg-white/75 px-4 py-2 shadow-[0_10px_35px_rgba(236,47,131,0.08)] backdrop-blur-xl sm:px-6 sm:py-2.5">
 
             <span className="font-serif text-xs font-semibold text-[#765f69] sm:text-sm">
-              29 · 08 · 1986
+              29 · 08 · 1984
             </span>
 
             <span className="text-[#ec2f83]">
@@ -417,7 +417,7 @@ export default function Chapter40() {
           </div>
 
           <p className="mt-2 text-[7px] uppercase tracking-[0.3em] text-[#b49aa5] sm:text-[8px]">
-            40 beautiful years
+            42 beautiful years
           </p>
 
         </div>

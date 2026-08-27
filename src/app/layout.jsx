@@ -14,14 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Minal | Chapter 40 ❤️",
+  title: "Minal | Chapter 42 ❤️",
   description:
-    "A beautiful birthday journey celebrating Minal's 40th birthday, memories, love and a story that began in 2004.",
+    "A beautiful birthday journey celebrating Minal's 42nd birthday, memories, love and a story that began in 2004.",
   keywords: [
     "Minal",
-    "Chapter 40",
+    "Chapter 42",
     "Birthday",
-    "40th Birthday",
+    "42nd Birthday",
     "Birthday Story",
   ],
   authors: [{ name: "Vishal & Vedika" }],
