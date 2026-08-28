@@ -79,7 +79,7 @@ export default function BirthdayCake() {
         {/* Giant 40 */}
 
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-serif text-[230px] font-bold leading-none text-[#ec2f83]/[0.035] sm:text-[430px]">
-          40
+          42
         </div>
 
         {/* Floating hearts */}

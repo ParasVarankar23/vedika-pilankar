@@ -79,7 +79,7 @@ const getChapterDuration = (chapterComponent) => {
   }
 
   if (chapterComponent === Timeline) {
-    return 21000;
+    return 33000;
   }
 
   if (chapterComponent === Chapter40) {
@@ -87,7 +87,7 @@ const getChapterDuration = (chapterComponent) => {
   }
 
   if (chapterComponent === MemoryGallery) {
-    return 33000;
+    return 66000;
   }
 
   if (chapterComponent === BirthdayLetter) {

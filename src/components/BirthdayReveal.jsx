@@ -232,7 +232,7 @@ export default function BirthdayReveal() {
             sm:text-[450px]
           "
         >
-          40
+          42
         </div>
 
         {/* =================================================

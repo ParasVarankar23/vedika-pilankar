@@ -228,7 +228,7 @@ export default function HeroSection() {
             sm:text-[420px]
           "
                 >
-                    40
+                    42
                 </div>
 
                 {/* =================================================
