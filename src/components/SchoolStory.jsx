@@ -271,7 +271,7 @@ export default function SchoolStory() {
                   sm:text-6xl
                 "
               >
-                Modern English
+               V. G. Limaye Vidya Mandir
                 <br />
                 <span className="text-[#ec2f83]">
                   School
