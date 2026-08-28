@@ -279,7 +279,7 @@ export default function BirthdayCake() {
                 <div className="absolute inset-0 flex items-center justify-center">
 
                   <span className="font-serif text-2xl font-semibold text-white drop-shadow-sm sm:text-3xl">
-                    40
+                    42
                   </span>
 
                 </div>
