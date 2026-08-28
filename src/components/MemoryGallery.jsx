@@ -7,13 +7,17 @@ const images = [
   "/images/personal/both2.jpeg",
   "/images/personal/both3.jpeg",
   "/images/personal/both4.jpeg",
+  "/images/personal/both5.jpeg",
+  "/images/personal/both6.jpeg",
   "/images/personal/family1.jpeg",
   "/images/personal/family2.jpeg",
   "/images/personal/family3.jpeg",
-  "/images/personal/pic1.jpeg",
   "/images/personal/pic2.jpeg",
   "/images/personal/pic3.jpeg",
   "/images/personal/pic4.jpeg",
+  "/images/personal/pic5.jpeg",
+  "/images/personal/pic6.jpeg"
+
 ];
 
 export default function MemoryGallery() {
