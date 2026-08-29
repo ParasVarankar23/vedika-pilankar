@@ -355,7 +355,7 @@ export default function LoveStory() {
               </p>
             </div>
 
-            {/* Minal */}
+            {/*  */}
 
             <div
               className="
@@ -376,7 +376,7 @@ export default function LoveStory() {
               </div>
 
               <p className="mt-4 font-serif text-xl font-semibold text-[#24151d] sm:text-2xl">
-                Minal
+                Vedika
               </p>
 
               <p className="mt-1 text-[9px] uppercase tracking-[0.2em] text-[#a88d99]">
