@@ -391,7 +391,7 @@ export default function Chapter40() {
         >
           Forty-two years of life, laughter, love, memories
           and countless moments that shaped the beautiful
-          person Minal is today.
+          person Vedika is today.
         </p>
 
         {/* =================================================
