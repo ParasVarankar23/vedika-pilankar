@@ -351,7 +351,7 @@ export default function BirthdayReveal() {
             md:text-7xl
           "
         >
-          Minal
+          Vedika
           <span className="reveal-heart ml-2 inline-block text-2xl sm:text-4xl">
             ♥
           </span>
