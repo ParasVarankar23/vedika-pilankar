@@ -384,7 +384,7 @@ export default function GuitarMoment() {
                     {" "}
                     And somewhere between the music,
                     school life and everyday moments,
-                    Minal began to notice him.
+                    Vedika began to notice him.
                 </p>
 
                 {/* =================================================
