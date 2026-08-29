@@ -40,12 +40,12 @@ const timelineItems = [
   {
     year: "2021",
     title: "A Permanent Position",
-    text: "After years of hard work and patience, she became permanent at Pillai College of Arts, Commerce and Science in 2021.",
+    text: "After years of hard work and patience, she became permanent at Shri Mohanlal Soni Vidyalay in 2021.",
   },
   {
     year: "2022",
     title: "Another Milestone",
-    text: "In 2022, he became permanent at PHOC Rasyani. Their years of perseverance finally brought greater stability.",
+    text: "In 2022, he became permanent at Adgaon Marathi High School. Their years of perseverance finally brought greater stability.",
   },
   {
     year: "Today",

@@ -11,15 +11,7 @@ export default function Countdown() {
   });
 
   useEffect(() => {
-    const now = new Date();
-    const currentYear = now.getFullYear();
-    let targetDate = new Date(currentYear, 8, 1, 0, 0, 0); // Sept 1
-
-    if (now > targetDate) {
-      targetDate = new Date(currentYear + 1, 8, 1, 0, 0, 0);
-    }
-
-    const target = targetDate.getTime();
+    const target = new Date("2026-08-29T00:00:00").getTime();
 
     const update = () => {
       const difference = target - Date.now();
@@ -112,7 +104,7 @@ export default function Countdown() {
           <div className="mx-auto h-px w-12 bg-[#ec2f83]/40" />
 
           <p className="mt-4 font-serif text-lg text-[#d91b68] sm:text-2xl">
-            01 · 09 · 2026
+            29 · 08 · 2026
           </p>
 
           <p className="mt-1 text-[9px] uppercase tracking-[0.3em] text-[#a88d99] sm:text-[10px]">

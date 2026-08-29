@@ -312,7 +312,7 @@ export default function HeroSection() {
                 {/* Small title */}
 
                 <p className="hero-small-title mt-5 text-[9px] font-medium uppercase tracking-[0.3em] text-[#a88d99] sm:mt-7 sm:text-xs sm:tracking-[0.42em]">
-                    A story that began in 2004
+                    A family story with Siddhu & Kavu
                 </p>
 
                 {/* Name */}
@@ -332,7 +332,7 @@ export default function HeroSection() {
               md:text-[130px]
             "
                     >
-                        Vedika
+                        Kavya
                     </h1>
 
                     {/* Small heart */}

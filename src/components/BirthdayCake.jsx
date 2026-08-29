@@ -165,7 +165,7 @@ export default function BirthdayCake() {
             </h2>
 
             <p className="mt-1 font-serif text-xl text-[#24151d] sm:text-2xl">
-              Vedika ❤️
+              Kavya ❤️
             </p>
 
           </div>
@@ -304,7 +304,7 @@ export default function BirthdayCake() {
           <div className="mt-7 sm:mt-8">
 
             <p className="text-sm font-medium text-[#24151d] sm:text-base">
-              Make a wish, Vedika...
+              Make a wish, Kavya...
             </p>
 
             <p className="mt-1 text-[9px] uppercase tracking-[0.25em] text-[#a88d99]">
