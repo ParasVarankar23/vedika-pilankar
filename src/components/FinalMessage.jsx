@@ -408,7 +408,7 @@ export default function FinalMessage() {
             "
           >
             Happy 42nd Birthday,
-            <br className="sm:hidden" /> Minal
+            <br className="sm:hidden" /> Vedika
           </h3>
 
           <div className="mt-1 text-sm text-[#ec2f83]">
