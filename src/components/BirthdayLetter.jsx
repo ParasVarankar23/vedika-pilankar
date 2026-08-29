@@ -312,7 +312,7 @@ export default function BirthdayLetter() {
             lg:text-7xl
           "
                 >
-                    A Letter For Minal
+                    A Letter For Vedika
                 </h2>
 
                 <p
@@ -402,7 +402,7 @@ export default function BirthdayLetter() {
 
                         <div className="letter-content relative z-10 opacity-0">
                             <p className="letter-line font-serif text-base text-[#24151d] sm:text-lg">
-                                Dear Minal,
+                                Dear Vedika,
                             </p>
 
                             <p className="letter-line mt-2.5 text-[8px] leading-4 text-[#765f69] sm:mt-4 sm:text-[10px] sm:leading-5">
