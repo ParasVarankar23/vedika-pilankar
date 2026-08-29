@@ -302,7 +302,7 @@ export default function HeroSection() {
                     <span className="h-px w-7 bg-[#ec2f83]/30 sm:w-12" />
 
                     <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#ec2f83] sm:text-[10px] sm:tracking-[0.45em]">
-                        01 · 09 · 2026
+                        29 · 08 · 2026
                     </p>
 
                     <span className="h-px w-7 bg-[#ec2f83]/30 sm:w-12" />
@@ -312,7 +312,7 @@ export default function HeroSection() {
                 {/* Small title */}
 
                 <p className="hero-small-title mt-5 text-[9px] font-medium uppercase tracking-[0.3em] text-[#a88d99] sm:mt-7 sm:text-xs sm:tracking-[0.42em]">
-                    A family story with Siddhu & Kavu
+                    A story that began in 2004
                 </p>
 
                 {/* Name */}
@@ -332,7 +332,7 @@ export default function HeroSection() {
               md:text-[130px]
             "
                     >
-                        Kavya
+                        Vedika
                     </h1>
 
                     {/* Small heart */}

@@ -14,18 +14,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Kavya | Birthday Celebration ❤️",
+  title: "Minal | Chapter 42 ❤️",
   description:
-    "A beautiful birthday celebration for Kavya, surrounded by love from Siddhartha, daughter Neha and son Parth.",
+    "A beautiful birthday journey celebrating Minal's 42nd birthday, memories, love and a story that began in 2004.",
   keywords: [
-    "Siddhartha",
-    "Kavya",
-    "Neha",
-    "Parth",
+    "Minal",
+    "Chapter 42",
     "Birthday",
+    "42nd Birthday",
     "Birthday Story",
   ],
-  authors: [{ name: "Siddhartha & Kavya" }],
+  authors: [{ name: "Vishal & Vedika" }],
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",

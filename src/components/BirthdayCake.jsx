@@ -165,7 +165,7 @@ export default function BirthdayCake() {
             </h2>
 
             <p className="mt-1 font-serif text-xl text-[#24151d] sm:text-2xl">
-              Kavya ❤️
+              Vedika ❤️
             </p>
 
           </div>
@@ -304,7 +304,7 @@ export default function BirthdayCake() {
           <div className="mt-7 sm:mt-8">
 
             <p className="text-sm font-medium text-[#24151d] sm:text-base">
-              Make a wish, Kavya...
+              Make a wish, Vedika...
             </p>
 
             <p className="mt-1 text-[9px] uppercase tracking-[0.25em] text-[#a88d99]">
@@ -388,7 +388,7 @@ export default function BirthdayCake() {
         ===================================================== */}
 
         <p className="mt-5 text-[7px] uppercase tracking-[0.35em] text-[#b49aa5] sm:mt-6 sm:text-[8px]">
-          1 September 1984 · Chapter 42
+          29 August 1984 · Chapter 42
         </p>
 
       </div>

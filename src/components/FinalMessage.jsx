@@ -407,8 +407,8 @@ export default function FinalMessage() {
               md:text-6xl
             "
           >
-            Happy Birthday,
-            <br className="sm:hidden" /> Kavya
+            Happy 42nd Birthday,
+            <br className="sm:hidden" /> Vedika
           </h3>
 
           <div className="mt-1 text-sm text-[#ec2f83]">
@@ -427,7 +427,7 @@ export default function FinalMessage() {
           </p>
 
           <p className="mt-1.5 font-serif text-base font-semibold text-[#24151d] sm:mt-2 sm:text-xl">
-            Siddhartha
+            Vishal
           </p>
 
           <div className="mt-1 text-xs text-[#ec2f83]">

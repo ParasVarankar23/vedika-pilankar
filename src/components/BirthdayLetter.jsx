@@ -312,7 +312,7 @@ export default function BirthdayLetter() {
             lg:text-7xl
           "
                 >
-                    A Letter For Kavya
+                    A Letter For Vedika
                 </h2>
 
                 <p
@@ -402,7 +402,7 @@ export default function BirthdayLetter() {
 
                         <div className="letter-content relative z-10 opacity-0">
                             <p className="letter-line font-serif text-base text-[#24151d] sm:text-lg">
-                                Dear Kavya,
+                                Dear Vedika,
                             </p>
 
                             <p className="letter-line mt-2.5 text-[8px] leading-4 text-[#765f69] sm:mt-4 sm:text-[10px] sm:leading-5">
@@ -411,13 +411,13 @@ export default function BirthdayLetter() {
                             </p>
 
                             <p className="letter-line mt-2 text-[8px] leading-4 text-[#765f69] sm:mt-3 sm:text-[10px] sm:leading-5">
-                                With Siddhartha by your side and the love of your family,
-                                every chapter feels even more special.
+                                From a story that began in 2004,
+                                to a beautiful chapter that began in 2008...
                             </p>
 
                             <p className="letter-line mt-2 text-[8px] leading-4 text-[#765f69] sm:mt-3 sm:text-[10px] sm:leading-5">
                                 May Chapter 42 bring endless happiness,
-                                laughter, love and beautiful memories for Kavya and all of us.
+                                laughter, love and beautiful memories.
                             </p>
 
                             {/* Signature */}
@@ -428,7 +428,7 @@ export default function BirthdayLetter() {
                                 </p>
 
                                 <p className="mt-0.5 font-serif text-[10px] font-semibold text-[#24151d] sm:mt-1 sm:text-sm">
-                                    Siddhartha ❤️
+                                    Vishal ❤️
                                 </p>
                             </div>
                         </div>
