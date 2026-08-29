@@ -326,7 +326,7 @@ export default function LoveStory() {
           />
 
           <div className="relative grid grid-cols-2 gap-4 sm:gap-10">
-            {/* Vishal */}
+            {/* Siddhartha */}
 
             <div
               className="
@@ -343,11 +343,11 @@ export default function LoveStory() {
               "
             >
               <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-pink-100 bg-[#fff9fc] text-lg text-[#ec2f83] sm:h-14 sm:w-14">
-                V
+                S
               </div>
 
               <p className="mt-4 font-serif text-xl font-semibold text-[#24151d] sm:text-2xl">
-                Vishal
+                Siddhartha
               </p>
 
               <p className="mt-1 text-[9px] uppercase tracking-[0.2em] text-[#a88d99]">
@@ -372,11 +372,11 @@ export default function LoveStory() {
               "
             >
               <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-pink-100 bg-[#fff9fc] text-lg text-[#ec2f83] sm:h-14 sm:w-14">
-                M
+                K
               </div>
 
               <p className="mt-4 font-serif text-xl font-semibold text-[#24151d] sm:text-2xl">
-                Vedika
+                Kavya
               </p>
 
               <p className="mt-1 text-[9px] uppercase tracking-[0.2em] text-[#a88d99]">

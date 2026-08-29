@@ -271,10 +271,10 @@ export default function SchoolStory() {
                   sm:text-6xl
                 "
               >
-               V. G. Limaye Vidya Mandir
+               C.K.T. School
                 <br />
                 <span className="text-[#ec2f83]">
-                  School
+                  Mumbai
                 </span>
               </h2>
 
@@ -296,9 +296,9 @@ export default function SchoolStory() {
                   sm:leading-8
                 "
               >
-                In 2004, two teachers found themselves sharing
-                the same school. They came together for work,
-                but life had something much more beautiful
+                In 2004, two teachers found themselves at C.K.T. School, Panvel,
+                sharing the same space, the same purpose, and the same dream.
+                They came together for work, but life had something much more beautiful
                 planned for them.
               </p>
 
@@ -314,9 +314,9 @@ export default function SchoolStory() {
                   sm:leading-8
                 "
               >
-                Somewhere between classrooms, conversations
-                and everyday school life, a simple connection
-                slowly began to become something more.
+                Somewhere between classrooms, conversations and everyday school life in Panvel,
+                a simple connection slowly began to become something more meaningful,
+                warm and unforgettable.
               </p>
 
               {/* =================================================

@@ -351,7 +351,7 @@ export default function BirthdayReveal() {
             md:text-7xl
           "
         >
-          Vedika
+          Kavya
           <span className="reveal-heart ml-2 inline-block text-2xl sm:text-4xl">
             ♥
           </span>
@@ -389,8 +389,8 @@ export default function BirthdayReveal() {
           "
         >
           Before we celebrate Chapter 42,
-          let us travel back to the very beginning
-          of a beautiful story.
+          let us travel through a beautiful family story
+          filled with love from Siddhu, Kavu, Neha and Parth.
         </p>
 
         {/* =================================================

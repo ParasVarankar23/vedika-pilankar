@@ -297,7 +297,7 @@ export default function GuitarMoment() {
                     <span className="h-1 w-1 rounded-full bg-[#ec2f83]/40" />
 
                     <span className="text-[9px] uppercase tracking-[0.2em] text-[#765f69]">
-                        V. G Limaye Vidya Mandir School
+                        C.K.T. School, Panvel
                     </span>
 
                 </div>
@@ -379,12 +379,12 @@ export default function GuitarMoment() {
             sm:leading-8
           "
                 >
-                    Vishal loved playing the guitar.
+                    Siddhartha loved playing the guitar.
                     <br className="sm:hidden" />
                     {" "}
                     And somewhere between the music,
                     school life and everyday moments,
-                    Vedika began to notice him.
+                    Kavya began to notice him.
                 </p>
 
                 {/* =================================================

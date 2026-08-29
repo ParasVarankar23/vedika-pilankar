@@ -8,7 +8,7 @@ export default function PasswordGate({ onUnlock }) {
     const [isUnlocking, setIsUnlocking] = useState(false);
     const [isShaking, setIsShaking] = useState(false);
 
-    const SECRET_PASSWORD = "29081984";
+    const SECRET_PASSWORD = "01091984";
 
     const addNumber = (number) => {
         if (isUnlocking || password.length >= 8) return;
@@ -173,12 +173,12 @@ export default function PasswordGate({ onUnlock }) {
                         </p>
 
                         <h1 className="font-serif text-[30px] font-semibold leading-tight text-[#24151d] sm:text-[34px]">
-                            Someone Special
+                            Kavya's Birthday
                         </h1>
 
                         <p className="mx-auto mt-2 max-w-[280px] text-[11px] leading-5 text-[#765f69] sm:text-xs">
                             A beautiful little story has been waiting
-                            behind this door.
+                            behind this door for the one we love most.
                         </p>
 
                     </div>
@@ -188,7 +188,7 @@ export default function PasswordGate({ onUnlock }) {
                     <div className="mt-4">
 
                         <p className="mb-2 text-center text-[8px] uppercase tracking-[0.3em] text-[#a88d99] sm:text-[9px]">
-                            Enter the special date
+                            Enter Kavya's birth date
                         </p>
 
                         <div className="flex justify-center gap-1.5 sm:gap-2">
@@ -214,7 +214,7 @@ export default function PasswordGate({ onUnlock }) {
                         </div>
 
                         <p className="mt-1.5 text-center text-[8px] text-[#a88d99]">
-                            DD • MM • YYYY
+                            01 • 09 • 1984
                         </p>
 
                     </div>
@@ -337,7 +337,7 @@ export default function PasswordGate({ onUnlock }) {
                     {/* Hint */}
 
                     <p className="mt-1 text-center text-[8px] uppercase tracking-[0.2em] text-[#b49aa5]">
-                        ♥ A very special date ♥
+                        ♥ 01 September 1984 ♥
                     </p>
 
                 </div>
