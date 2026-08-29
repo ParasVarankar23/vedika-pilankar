@@ -40,7 +40,7 @@ const timelineItems = [
   {
     year: "2021",
     title: "A Permanent Position",
-    text: "After years of hard work and patience, she joined Pillai College of Arts, Commerce and Science, Panvel in 2021.",
+    text: "After years of hard work and patience, she became permanent at Pillai College of Arts, Commerce and Science in 2021.",
   },
   {
     year: "2022",

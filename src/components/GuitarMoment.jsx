@@ -297,7 +297,7 @@ export default function GuitarMoment() {
                     <span className="h-1 w-1 rounded-full bg-[#ec2f83]/40" />
 
                     <span className="text-[9px] uppercase tracking-[0.2em] text-[#765f69]">
-                        C.K.T. School, Panvel
+                        C.K.T. School, Mumbai
                     </span>
 
                 </div>

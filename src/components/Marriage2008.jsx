@@ -418,7 +418,7 @@ export default function Marriage2008() {
             sm:leading-8
           "
         >
-          What began at C.K.T. School, Panvel in 2004 slowly
+          What began at C.K.T. School in Mumbai in 2004 slowly
           became a beautiful journey.
           <br className="hidden sm:block" />
           In 2008, their love story entered a new chapter —

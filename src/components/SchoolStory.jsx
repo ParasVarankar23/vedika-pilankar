@@ -296,7 +296,7 @@ export default function SchoolStory() {
                   sm:leading-8
                 "
               >
-                In 2004, two teachers found themselves at C.K.T. School, Panvel,
+                In 2004, two teachers found themselves at C.K.T. School in Mumbai,
                 sharing the same space, the same purpose, and the same dream.
                 They came together for work, but life had something much more beautiful
                 planned for them.
@@ -314,7 +314,7 @@ export default function SchoolStory() {
                   sm:leading-8
                 "
               >
-                Somewhere between classrooms, conversations and everyday school life in Panvel,
+                Somewhere between classrooms, conversations and everyday school life,
                 a simple connection slowly began to become something more meaningful,
                 warm and unforgettable.
               </p>
