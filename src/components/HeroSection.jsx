@@ -332,7 +332,7 @@ export default function HeroSection() {
               md:text-[130px]
             "
                     >
-                        Minal
+                        Vedika
                     </h1>
 
                     {/* Small heart */}
