@@ -75,7 +75,7 @@ export default function Countdown() {
 
         <p className="mx-auto mt-4 max-w-md text-xs leading-6 text-[#765f69] sm:text-sm">
           Every second brings us closer to
-          <br className="sm:hidden" /> Minal's special day.
+          <br className="sm:hidden" /> Vedika's special day.
         </p>
 
         {/* Countdown */}
@@ -108,7 +108,7 @@ export default function Countdown() {
           </p>
 
           <p className="mt-1 text-[9px] uppercase tracking-[0.3em] text-[#a88d99] sm:text-[10px]">
-            Minal's 42nd Birthday
+            Vedika's 42nd Birthday
           </p>
         </div>
 
