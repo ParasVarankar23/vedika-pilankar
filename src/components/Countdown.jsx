@@ -112,7 +112,7 @@ export default function Countdown() {
           <div className="mx-auto h-px w-12 bg-[#ec2f83]/40" />
 
           <p className="mt-4 font-serif text-lg text-[#d91b68] sm:text-2xl">
-            01 · 09 · 2026
+            01 · 09 · 1984
           </p>
 
           <p className="mt-1 text-[9px] uppercase tracking-[0.3em] text-[#a88d99] sm:text-[10px]">

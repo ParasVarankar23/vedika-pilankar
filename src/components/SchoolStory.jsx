@@ -271,10 +271,10 @@ export default function SchoolStory() {
                   sm:text-6xl
                 "
               >
-               C.K.T. School
+               C.K.T. School Panvel
                 <br />
                 <span className="text-[#ec2f83]">
-                  Mumbai
+                  A beginning of a journey
                 </span>
               </h2>
 
@@ -296,7 +296,7 @@ export default function SchoolStory() {
                   sm:leading-8
                 "
               >
-                In 2004, two teachers found themselves at C.K.T. School in Mumbai,
+                In 2004, two teachers found themselves at PHOC Rasyani,
                 sharing the same space, the same purpose, and the same dream.
                 They came together for work, but life had something much more beautiful
                 planned for them.

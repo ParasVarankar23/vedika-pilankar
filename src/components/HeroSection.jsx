@@ -302,7 +302,7 @@ export default function HeroSection() {
                     <span className="h-px w-7 bg-[#ec2f83]/30 sm:w-12" />
 
                     <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#ec2f83] sm:text-[10px] sm:tracking-[0.45em]">
-                        29 · 08 · 2026
+                        01 · 09 · 1984
                     </p>
 
                     <span className="h-px w-7 bg-[#ec2f83]/30 sm:w-12" />

@@ -28,24 +28,24 @@ const timelineItems = [
     text: "In 2009, their happiness grew with the arrival of Parth, bringing a beautiful new meaning to their lives.",
   },
   {
-    year: "2011",
-    title: "Neha Was Born",
-    text: "In 2011, their family became even brighter with the arrival of Neha, filling their lives with extra love and joy.",
-  },
-  {
     year: "2009",
     title: "A New Beginning",
     text: "From 2009, they also started taking private tuition classes and worked hard to build a stable life.",
   },
   {
+    year: "2011",
+    title: "Neha Was Born",
+    text: "In 2011, their family became even brighter with the arrival of Neha, filling their lives with extra love and joy.",
+  },
+  {
     year: "2021",
     title: "A Permanent Position",
-    text: "After years of hard work and patience, she became permanent at Shri Mohanlal Soni Vidyalay in 2021.",
+    text: "After years of hard work and patience, she became permanentat Pillai College of Arts, Commerce and Science in 2021.",
   },
   {
     year: "2022",
     title: "Another Milestone",
-    text: "In 2022, he became permanent at Adgaon Marathi High School. Their years of perseverance finally brought greater stability.",
+    text: "In 2022, he became permanent at PHOC Rasyani. Their years of perseverance finally brought greater stability.",
   },
   {
     year: "Today",

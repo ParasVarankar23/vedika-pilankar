@@ -403,7 +403,7 @@ export default function Chapter40() {
           <div className="flex items-center gap-2 rounded-full border border-pink-100 bg-white/75 px-4 py-2 shadow-[0_10px_35px_rgba(236,47,131,0.08)] backdrop-blur-xl sm:px-6 sm:py-2.5">
 
             <span className="font-serif text-xs font-semibold text-[#765f69] sm:text-sm">
-              29 · 08 · 1984
+              01 · 09 · 1984
             </span>
 
             <span className="text-[#ec2f83]">
@@ -411,7 +411,7 @@ export default function Chapter40() {
             </span>
 
             <span className="font-serif text-xs font-semibold text-[#ec2f83] sm:text-sm">
-              29 · 08 · 2026
+              01 · 09 · 2026
             </span>
 
           </div>
